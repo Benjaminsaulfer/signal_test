@@ -6,6 +6,9 @@ extern int16 EncoderL;
 extern int16 EncoderR;
 extern uint8 motor_flag;
 extern uint16_t motor_base;
+extern int16 Max_encoderL;//编码器最大速度
+extern int16 Max_encoderR;
+
 
 //电机初始化
 void  moter_init(){
@@ -195,4 +198,15 @@ void Encoder_Get_Max(int16* Encoder_L,int16* Encoder_R){
       *Encoder_L = EncoderL;
     if(EncoderR>*Encoder_R)
       *Encoder_R = EncoderR;
+}
+
+void Encoder_Test(){//适用于测试
+   motor_flag = 1;
+   //ips200_Printf(0,166,(ips200_font_size_enum)0,"   SpeedL:%.2f ",speedL);
+   //ips200_Printf(120,166,(ips200_font_size_enum)0," SpeedR:%.2f ",speedR);
+   ips200_Printf(0,240,(ips200_font_size_enum)0,"Max_L:%d",Max_encoderL);//显示左编码器最大值
+   ips200_Printf(0,248,(ips200_font_size_enum)0,"Max_R:%d",Max_encoderR);//显示右编码器最大值
+   ips200_Printf(58,288,(ips200_font_size_enum)0,"%d ",EncoderL);//显示左编码器的值
+   ips200_Printf(178,288,(ips200_font_size_enum)0,"%d ",EncoderR);//显示右编码器数字
+   Encoder_Get_Max(&Max_encoderL,&Max_encoderR);
 }

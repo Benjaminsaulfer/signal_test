@@ -81,9 +81,9 @@ void binarizeImage_ZIP(uint8 threshold) {
        bin_y++;
     for(uint8_t x =0;x<188;x+=2){
        bin_x++;
-       //if lager than threshold we will turn this pixel to white else black
+       //if Pixel lager than threshold we will turn this pixel to white else black
        if(mt9v03x_image[y][x] >= threshold)Binary_map[bin_x][bin_y] = 1;   //  white 1
-       else Binary_map[bin_x][bin_y] = 0;          //  black 0
+       else Binary_map[bin_x][bin_y] = 0;                                    //  black 0
     }
   }
 }

@@ -34,4 +34,5 @@ void   Speed_FeedBack(PID * pid,Moter_WHO moter);             //速度环
 void   Cascade_FeedBack(PID * SteeringPID,PID * SpeedPID_L,PID * SpeedPID_R);   //串级PID (转向环，速度环)  
 
 /////////////////////////测试用/////////////////////////////
-void Encoder_Get_Max(int16* Encoder_L,int16* Encoder_R);
+void Encoder_Get_Max(int16* Encoder_L,int16* Encoder_R);      //获取编码器最大值
+void Encoder_Test();                                          //测试编码器最大值，还是实际值
